@@ -6,6 +6,9 @@ import DoctorsSolutionTop from "./components/DoctorsSolutionTop";
 import DoctorsSolutionBottom from "./components/DoctorsSolutionBottom";
 import DoctorsUnderBtn from "./components/DoctorsUnderBtn";
 import Footer from "../../components/Footer";
+import "../Doctors/components/Doctors.css";
+import "../../components/Css/reset.css";
+import "../../components/Css/link.css";
 
 function DoctorsPage() {
     return (
