@@ -1,4 +1,4 @@
-function DoctorsHeader() {
+function Header() {
     return (
         <header>
             <div class="menu_var">
@@ -90,4 +90,4 @@ function DoctorsHeader() {
         </header>
     );
 }
-export default DoctorsHeader;
+export default Header;

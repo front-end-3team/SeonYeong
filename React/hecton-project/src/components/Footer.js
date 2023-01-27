@@ -1,4 +1,4 @@
-function DoctorsFooter() {
+function Footer() {
     return (
         <footer>
             <div class="footer_wrap">
@@ -78,4 +78,4 @@ function DoctorsFooter() {
         </footer>
     );
 }
-export default DoctorsFooter;
+export default Footer;
