@@ -1,10 +1,13 @@
 import DoctorsPage from "./pages/Doctors";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
     return (
-        <>
-            <DoctorsPage></DoctorsPage>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<DoctorsPage />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
