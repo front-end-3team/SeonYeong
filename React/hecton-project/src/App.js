@@ -1,14 +1,10 @@
-import DoctorsFooter from "./components/DoctorsFooter";
-import DoctorsHeader from "./components/DoctorsHeader";
-import DoctorsMain from "./components/DoctorsMain";
+import DoctorsPage from "./pages/Doctors";
 
 function App() {
     return (
-        <div>
-            <DoctorsHeader></DoctorsHeader>
-            <DoctorsMain></DoctorsMain>
-            <DoctorsFooter></DoctorsFooter>
-        </div>
+        <>
+            <DoctorsPage></DoctorsPage>
+        </>
     );
 }
 
