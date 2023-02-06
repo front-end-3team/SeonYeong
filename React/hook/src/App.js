@@ -1,11 +1,13 @@
-import UseEffect from "./pages/UseEffect";
-import UseState from "./pages/UseState";
+// import UseEffect from "./pages/UseEffect";
+// import UseState from "./pages/UseState";
+import Use from "./pages/use";
 
 function App() {
     return (
         <>
-            <UseState></UseState>
-            <UseEffect></UseEffect>
+            {/* <UseState></UseState> */}
+            <Use />
+            {/* <UseEffect></UseEffect> */}
         </>
     );
 }
