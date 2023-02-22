@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 function Q1() {
-  /* 
+    /* 
     문제1
     useState 및 styled-components에 관련한 문제입니다.
     아래 문제를 통해 어떠한 경우 state를 사용해야하는지 고민하여 풀어보세요
@@ -24,31 +25,56 @@ function Q1() {
 
   */
 
-  return (
-    <>
-      <h1>문제1</h1>
-      <div>
-        <h2>문제1-1.</h2>
-        <input
-          type="text"
-          placeholder={"김성용"}
-          style={{ textAlign: "center" }}
-        />
-        <S.Message> 올바르게 입력하셨습니다 </S.Message>
-      </div>
+    //1-1
 
-      <div>
-        <h2>문제1-2. </h2>
-        <button>보이기</button>
-        <p> 이 문구는 보이기 상태일 때만 볼 수 있습니다 </p>
-      </div>
-    </>
-  );
+    const [onText, setOnText] = useState(false);
+
+    const colors = (e) => {
+        if (e.target.value === e.target.placeholder) {
+            setOnText(true);
+        } else {
+            setOnText(false);
+        }
+    };
+
+    //1-2
+
+    const [text, setText] = useState(false);
+
+    const onClickBtn = () => {
+        setText((el) => !el);
+    };
+
+    return (
+        <>
+            <h1>문제1</h1>
+            <div>
+                <h2>문제1-1.</h2>
+                <input
+                    type="text"
+                    placeholder={"김성용"}
+                    style={{ textAlign: "center" }}
+                    onChange={colors}
+                />
+                <S.Message state={onText}>
+                    {onText ? "올바르게 입력하셨습니다" : "올바르게 글을 작성해주세요"}
+                </S.Message>
+            </div>
+
+            <div>
+                <h2>문제1-2. </h2>
+                <button onClick={onClickBtn}>{text ? "숨기기" : "보이기"}</button>
+                <p>{text ? "이 문구는 보이기 상태일 때만 볼 수 있습니다" : ""}</p>
+            </div>
+        </>
+    );
 }
 export default Q1;
 
-const Message = styled.p``;
+const Message = styled.p`
+    color: ${({ state }) => (state ? "green" : "red")};
+`;
 
 const S = {
-  Message,
+    Message,
 };
