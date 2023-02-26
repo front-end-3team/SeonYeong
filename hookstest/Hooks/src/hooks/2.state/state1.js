@@ -29,6 +29,7 @@ function State1() {
             [name]: value,
         });
     };
+
     // 추가버튼
     const onAddSongList = () => {
         const list = {
@@ -44,6 +45,7 @@ function State1() {
         });
     };
     console.log(musicList);
+
     // 삭제버튼
     const removeBtn = (title) => {
         setMusicList(musicList.filter((el) => el.title !== title));
