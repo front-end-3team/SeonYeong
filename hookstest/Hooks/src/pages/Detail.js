@@ -11,6 +11,7 @@ function DetailPage() {
     const [products, setProducts] = useState(
         state.find((el) => el.productNumber === productNumber)
     );
+
     // input Ref
     const reviewerInput = useRef();
     const reviewInput = useRef();

@@ -46,7 +46,7 @@ function State3() {
     const navigate = useNavigate();
 
     const onNavigateDetailPage = (el) => {
-        navigate(`/state/detail/${el.productNumber}`);
+        navigate(`/state/detail/${el}`);
     };
 
     return (
@@ -56,7 +56,10 @@ function State3() {
             <>
                 {onList.products.map((list) => (
                     <ul>
-                        <ProductCard onNavigate={() => onNavigateDetailPage(list)} list={list} />
+                        <ProductCard
+                            onNavigate={() => onNavigateDetailPage(list.productNumber)}
+                            list={list}
+                        />
                     </ul>
                 ))}
             </>
