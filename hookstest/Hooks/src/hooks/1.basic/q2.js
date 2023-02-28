@@ -14,6 +14,8 @@ function Q2() {
     };
 
     const onClickListAdd = () => {
+        if (!arr.current.length) return;
+        console.log(arr.current.length);
         setState(true);
     };
 
