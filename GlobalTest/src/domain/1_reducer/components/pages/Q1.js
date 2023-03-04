@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import NavigateButton from "../../../../components/NavigateButton";
 import Q1Form from "../atom/Form";
 import ReducerQ1List from "../atom/List";
+import { list } from "../../../../store/1_reducer";
 
 const ReducerQ1Page = () => {
     /* 
