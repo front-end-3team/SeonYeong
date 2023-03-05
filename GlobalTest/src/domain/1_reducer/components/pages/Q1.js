@@ -34,7 +34,7 @@ const ReducerQ1Page = () => {
         dispatch({
             type: "ADD_LIST",
             payload: {
-                id: ingredients.length + 1,
+                id: Math.floor(Math.random() * 100000),
                 name,
                 price,
             },
