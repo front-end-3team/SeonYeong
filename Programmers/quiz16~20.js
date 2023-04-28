@@ -9,15 +9,15 @@
 // s는 영문 알파벳 대소문자 또는 0부터 9까지 숫자로 이루어져 있습니다.
 
 function solution(s) {
-    let regex = /[^0-9]/g;
-    let result = s.replace(regex, "");
-    if (s.length !== 4 && s.length != 6) return false;
-    if (result === s) {
-        answer = true;
-    } else {
-        answer = false;
-    }
-    return answer;
+  let regex = /[^0-9]/g;
+  let result = s.replace(regex, "");
+  if (s.length !== 4 && s.length != 6) return false;
+  if (result === s) {
+    answer = true;
+  } else {
+    answer = false;
+  }
+  return answer;
 }
 
 // 문제 설명
@@ -35,17 +35,17 @@ function solution(s) {
 // 놀이기구의 이용 횟수 count : 1 ≤ count ≤ 2,500, count는 자연수
 
 function solution(price, money, count) {
-    let a = 0;
-    for (let i = 1; i <= count; i++) {
-        a += i * price;
-    }
+  let a = 0;
+  for (let i = 1; i <= count; i++) {
+    a += i * price;
+  }
 
-    if (a > money) {
-        answer = a - money;
-    } else {
-        answer = 0;
-    }
-    return answer;
+  if (a > money) {
+    answer = a - money;
+  } else {
+    answer = 0;
+  }
+  return answer;
 }
 
 // 문제 설명
@@ -58,15 +58,15 @@ function solution(price, money, count) {
 // 행렬 arr1, arr2의 행과 열의 길이는 500을 넘지 않습니다.
 
 function solution(arr1, arr2) {
-    let z = [];
-    for (let a = 0; a < arr1.length; a++) {
-        let p = [];
-        for (let b = 0; b < arr1[a].length; b++) {
-            p.push(arr1[a][b] + arr2[a][b]);
-        }
-        z.push(p);
+  let z = [];
+  for (let a = 0; a < arr1.length; a++) {
+    let p = [];
+    for (let b = 0; b < arr1[a].length; b++) {
+      p.push(arr1[a][b] + arr2[a][b]);
     }
-    return z;
+    z.push(p);
+  }
+  return z;
 }
 
 // 문제 설명
@@ -84,11 +84,40 @@ function solution(arr1, arr2) {
 // 배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수
 
 function solution(arr) {
-    let a = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] !== arr[i + 1]) {
-            a.push(arr[i]);
-        }
+  let a = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== arr[i + 1]) {
+      a.push(arr[i]);
     }
-    return a;
+  }
+  return a;
+}
+
+// 문제 설명
+
+// 두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요.
+// 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다.
+// 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다.
+
+// 제한 사항
+
+// 두 수는 1이상 1000000이하의 자연수입니다.
+
+/*
+
+n	m	return
+3	12	[3, 12]
+2	5	[1, 10]
+
+*/
+
+function solution(n, m) {
+  let a = 0;
+  for (let i = 0; i <= n; i++) {
+    if (n % i === 0 && m % i === 0) {
+      a = i;
+    }
+  }
+  let b = (n * m) / a;
+  return [a, b];
 }
